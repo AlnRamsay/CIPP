@@ -25,13 +25,14 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_HAPPY_PLANT_0228E8210 }} # change this to your repository secret name
-          repo_token: ${{ secrets.3f01638322c5103fc530b1c825152a5e4996bb6a0147df34290b24aef12e9c7604-35642de2-64fe-4131-89bc-75ca371e410001020270228e8210 }} # Used for Github integrations (i.e. PR comments)
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "/out" # Built app content directory - optional
+          skip_deploy_on_missing_secrets: true
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
